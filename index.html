@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaheer's Optometrist | Premium Eye Care</title>
+    <meta id="meta-description" name="description" content="Zaheer's Optometrist in Central Square: Coprehensive Diagnostics, pediatric care, driver’s certificates, and curated frames. Book an appointment.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,200;300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased selection:bg-blue-500 selection:text-white relative">
+
+    <!-- Ambient Background -->
+    <div class="ambient-light">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="flex flex-col items-center gap-6">
+            <svg class="w-12 h-12 text-black animate-pulse" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 4.5C7.36 4.5 3.42 7.51 2.04 12.32C1.97 12.53 1.97 12.75 2.04 12.96C3.42 17.78 7.36 20.78 12 20.78C16.64 20.78 20.58 17.78 21.96 12.96C22.03 12.75 22.03 12.53 21.96 12.32C20.58 7.51 16.64 4.5 12 4.5ZM12 18.28C8.53 18.28 5.72 15.47 5.72 12C5.72 8.53 8.53 5.72 12 5.72C15.47 5.72 18.28 8.53 18.28 12C18.28 15.47 15.47 18.28 12 18.28ZM12 8.22C9.91 8.22 8.22 9.91 8.22 12C8.22 14.09 9.91 15.78 12 15.78C14.09 15.78 15.78 14.09 15.78 12C15.78 9.91 14.09 8.22 12 8.22Z" fill="currentColor"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4" aria-label="Primary">
+        <div class="glass rounded-full px-6 py-3 flex justify-between items-center w-full max-w-4xl shadow-lg shadow-black/5">
+            <a href="#/" class="text-xl font-serif font-semibold tracking-tight z-50 relative text-black" aria-label="Go to home">
+                Zaheer's.
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center" id="nav-links-desktop">
+                <a href="#/about" class="text-sm font-medium text-neutral-500 hover:text-black transition-colors">Practice</a>
+                <a href="#/services" class="text-sm font-medium text-neutral-500 hover:text-black transition-colors">Services</a>
+                <a href="#/frames" class="text-sm font-medium text-neutral-500 hover:text-black transition-colors">Collection</a>
+                <a href="#/contact" class="px-5 py-2 bg-black text-white text-xs font-semibold rounded-full hover:bg-neutral-800 transition-colors btn-ios">Book</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden z-50 group flex flex-col items-end gap-1.5 cursor-pointer p-1" aria-label="Open menu" aria-expanded="false">
+                <div class="w-6 h-0.5 bg-black rounded-full transition-all duration-300"></div>
+                <div class="w-6 h-0.5 bg-black rounded-full transition-all duration-300"></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-3xl z-40 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true">
+        <div class="flex flex-col items-center space-y-8 text-center">
+            <a href="#/about" class="text-3xl font-serif mobile-link text-neutral-900">Practice</a>
+            <a href="#/services" class="text-3xl font-serif mobile-link text-neutral-900">Services</a>
+            <a href="#/frames" class="text-3xl font-serif mobile-link text-neutral-900">Collection</a>
+            <a href="#/contact" class="text-3xl font-serif mobile-link text-neutral-900">Contact</a>
+        </div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <main id="home-page">
+        <!-- Hero Section (Spatial Layout) -->
+        <header class="min-h-screen flex flex-col justify-center pt-32 pb-20 relative overflow-hidden px-6">
+            <div class="max-w-6xl mx-auto w-full z-10">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <!-- Text -->
+                    <div class="space-y-10 hero-text text-center lg:text-left order-2 lg:order-1">
+                        <h1 class="text-7xl md:text-8xl lg:text-9xl font-serif leading-[0.85] tracking-tight text-black mix-blend-overlay">
+                            Vision <br>
+                            <span class="text-neutral-400 italic font-light">Evolved.</span>
+                        </h1>
+
+                        <p class="text-xl text-neutral-500 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
+                            A sanctuary for your sight. Zaheer's combines clinical precision with an immersive, human-centric design philosophy.
+                        </p>
+
+                        <div class="flex gap-6 justify-center lg:justify-start pt-6">
+                            <a href="#/contact" class="px-10 py-5 bg-black text-white text-base font-medium rounded-full hover:bg-neutral-800 btn-ios btn-shimmer shadow-2xl shadow-blue-900/20">
+                                Book Visit
+                            </a>
+                            <div class="flex items-center gap-3" aria-label="Open status">
+                                <span class="flex h-3 w-3 relative">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                </span>
+                                <span class="text-sm font-medium text-neutral-500">Open Now</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image (Spatial Float) -->
+                    <div class="relative hero-image opacity-0 mt-8 lg:mt-0 order-1 lg:order-2">
+                        <div class="aspect-[4/5] overflow-hidden rounded-[3rem] shadow-2xl shadow-blue-900/10 relative transform hover:scale-[1.02] transition-transform duration-700 ease-out glass-card border-0 p-2">
+                            <div class="w-full h-full rounded-[2.5rem] overflow-hidden relative">
+                                 <img src="images/glass7.jpg" alt="Portrait in a calm clinical environment" class="w-full h-full object-cover parallax-img" loading="lazy">
+                            </div>
+
+                            <!-- Spatial Floating Badge -->
+                            <div class="absolute bottom-8 left-8 glass px-6 py-4 rounded-full flex items-center gap-4 border border-white/40 shadow-lg backdrop-blur-xl">
+                                <div class="flex -space-x-3" aria-hidden="true">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="w-8 h-8 rounded-full object-cover border-2 border-white" loading="lazy" decoding="async">
+                                    <img src="images/web-developer.png" alt="" class="w-8 h-8 rounded-full object-cover border-2 border-white" loading="lazy" decoding="async">
+                                    <div class="w-8 h-8 rounded-full bg-neutral-400 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">1k+</div>
+                                </div>
+                                <div class="text-xs font-semibold text-black/80">Trusted Patients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Info Strip (Pill Style) -->
+        <div class="py-10">
+            <div class="max-w-2xl mx-auto px-6">
+                <div class="glass rounded-2xl p-1 flex flex-col md:flex-row justify-between items-center text-xs font-medium text-neutral-500 text-center md:text-left shadow-sm">
+                    <div class="px-6 py-3 w-full md:w-auto border-b md:border-b-0 md:border-r border-neutral-200/50">
+                        <span class="text-black block md:inline">Open Today</span> 09:00 - 17:00
+                    </div>
+                    <div class="px-6 py-3 w-full md:w-auto border-b md:border-b-0 md:border-r border-neutral-200/50">
+                       Shop 12, Secunda Central
+                    </div>
+                    <div class="px-6 py-3 w-full md:w-auto text-blue-600">
+                        017 634 3885
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section (Spatial Glass) -->
+        <section id="about" class="py-32 px-6 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <div class="glass-card rounded-[3rem] p-8 md:p-16 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+
+                    <div class="grid md:grid-cols-2 gap-16 items-center relative z-10">
+                        <div class="space-y-8">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/50 border border-white/50 backdrop-blur-md">
+                                <span class="w-1.5 h-1.5 rounded-full bg-black" aria-hidden="true"></span>
+                                <span class="text-[10px] font-bold tracking-widest text-black uppercase">The Philosophy</span>
+                            </div>
+
+                            <h2 class="text-5xl md:text-6xl font-serif text-black leading-[0.9]">
+                                Medical Precision. <br>
+                                <span class="text-neutral-400 italic font-light">Human Touch.</span>
+                            </h2>
+
+                            <p class="text-neutral-500 leading-relaxed text-lg font-light">
+                                We believe eye care should be as calm as it is clinical. Zaheer's Optometrist combines hospital-grade diagnostics with an unhurried, design-led environment.
+                            </p>
+
+                            <div class="flex gap-16 pt-4 border-t border-black/5">
+                                <div>
+                                    <span class="block text-4xl font-serif text-black counter" data-target="1000">0</span>
+                                    <span class="text-xs text-neutral-400 font-bold uppercase tracking-wider">Patients Treated</span>
+                                </div>
+                                <div>
+                                    <span class="block text-4xl font-serif text-black counter" data-target="4">0</span>
+                                    <span class="text-xs text-neutral-400 font-bold uppercase tracking-wider">Years Active</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-2xl shadow-black/5 rotate-3 hover:rotate-0 transition-transform duration-700 ease-out">
+                            <img src="images/zaheers.jpg" alt="Optometry diagnostic equipment" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent pointer-events-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services (Spatial Bento Grid) -->
+        <section id="services" class="py-32 relative z-10">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-8 mb-16">
+                    <div>
+                        <h2 class="text-5xl font-serif text-black mb-4">Clinical Services</h2>
+                        <p class="text-neutral-500 text-lg max-w-md">Precision diagnostics powered by advanced technology.</p>
+                    </div>
+                    <div class="hidden sm:block text-right">
+                        <p class="text-xs font-semibold text-neutral-400 uppercase tracking-widest">Medical • Aesthetics</p>
+                    </div>
+                </div>
+
+                <div class="bento-grid grid-rows-2">
+                    <!-- Large Card: Eye Exam -->
+                    <div id="svc-diagnostics" data-tap-nav="#/diagnostics" class="col-span-12 md:col-span-8 row-span-2 bento-item glass-card p-10 flex flex-col justify-between h-full min-h-[400px] relative group cursor-pointer tap-hover" role="button" tabindex="0" aria-label="Service details: Comprehensive Diagnostics">
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-50/80 flex items-center justify-center text-blue-600 mb-6 backdrop-blur-sm" aria-hidden="true">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <h3 class="text-3xl font-serif mb-2">Comprehensive Diagnostics</h3>
+                            <p class="text-neutral-500 max-w-sm">Full spectrum analysis including retinal photography, glaucoma screening, and precise refraction.</p>
+                            <a href="#/diagnostics" class="sr-only">Open Comprehensive Diagnostics page</a>
+                        </div>
+                        <div class="absolute bottom-10 right-10 opacity-100 translate-x-0 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 transform md:translate-x-4 md:group-hover:translate-x-0 tap-reveal tap-slide" aria-hidden="true">
+                            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none tap-bg"></div>
+                    </div>
+
+                    <!-- Small Card: Pediatric -->
+                    <div class="col-span-12 md:col-span-4 bento-item glass-card p-8 flex flex-col justify-between h-[300px] group cursor-pointer tap-hover relative" role="button" tabindex="0" aria-label="Service details: Pediatric Care">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-50/80 flex items-center justify-center text-purple-600 backdrop-blur-sm relative z-10" aria-hidden="true">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-serif mb-1">Pediatric Care</h3>
+                            <p class="text-sm text-neutral-500">Gentle, specialized vision correction for children.</p>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none tap-bg"></div>
+                    </div>
+
+                    <!-- Small Card: Drivers -->
+                    <div class="col-span-12 md:col-span-4 bento-item glass-card p-8 flex flex-col justify-between h-[300px] group cursor-pointer tap-hover relative" role="button" tabindex="0" aria-label="Service details: Driver's License">
+                        <div class="w-12 h-12 rounded-2xl bg-green-50/80 flex items-center justify-center text-green-600 backdrop-blur-sm relative z-10" aria-hidden="true">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 0 0118 0z" /></svg>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-serif mb-1">Driver's License</h3>
+                            <p class="text-sm text-neutral-500">Instant certificates for official licensing.</p>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-50/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none tap-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collections (Spatial Showroom) -->
+        <section id="frames" class="py-32 px-6 relative z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 mb-16">
+                    <div>
+                        <h2 class="text-5xl font-serif text-black mb-2">Curated Frames</h2>
+                        <p class="text-neutral-500">Hand-picked designs from independent studios.</p>
+                    </div>
+
+                    <!-- Desktop gets the understated text link; mobile gets a full-width iOS-style button -->
+                    <div class="flex flex-col items-start sm:items-end gap-3 w-full sm:w-auto">
+                        <a href="#/collections" class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-black border-b border-black/20 pb-1 hover:border-black transition-colors">
+                            View All Collections
+                        </a>
+                        <a href="#/collections" class="md:hidden inline-flex items-center justify-center w-full px-5 py-3 rounded-full bg-white/70 border border-white/70 backdrop-blur-md text-xs font-semibold text-black hover:bg-white/90 transition-colors btn-ios" aria-label="View all collections">
+                            View all collections <span class="ml-2" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="glass-card rounded-[2.5rem] p-3 group cursor-pointer tap-hover" role="button" tabindex="0" aria-label="Frame details: The Aviator by MYKITA">
+                        <div class="aspect-[4/5] overflow-hidden rounded-[2rem] relative bg-neutral-100">
+                            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Frame: The Aviator" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 tap-reveal tap-bg">
+                                <div class="space-y-2">
+                                    <p class="text-white font-serif text-2xl leading-none">The Aviator</p>
+                                    <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">MYKITA</p>
+                                    <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                        <p class="text-white/70 text-sm">Lightweight Metal</p>
+                                        <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R2 199</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card rounded-[2.5rem] p-3 group cursor-pointer md:-mt-12 tap-hover" role="button" tabindex="0" aria-label="Frame details: Tortoise Bold by Ray-Ban">
+                        <div class="aspect-[4/5] overflow-hidden rounded-[2rem] relative bg-neutral-100">
+                            <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Frame: Tortoise Bold" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 tap-reveal tap-bg">
+                                <div class="space-y-2">
+                                    <p class="text-white font-serif text-2xl leading-none">Tortoise Bold</p>
+                                    <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Ray-Ban</p>
+                                    <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                        <p class="text-white/70 text-sm">Hand-polished Acetate</p>
+                                        <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R1 499</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card rounded-[2.5rem] p-3 group cursor-pointer tap-hover" role="button" tabindex="0" aria-label="Frame details: Titanium Air by Silhouette">
+                        <div class="aspect-[4/5] overflow-hidden rounded-[2rem] relative bg-neutral-100">
+                            <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Frame: Titanium Air" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 tap-reveal tap-bg">
+                                <div class="space-y-2">
+                                    <p class="text-white font-serif text-2xl leading-none">Titanium Air</p>
+                                    <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Silhouette</p>
+                                    <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                        <p class="text-white/70 text-sm">Engineering Grade</p>
+                                        <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R3 499</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-6 text-xs text-neutral-400 leading-relaxed max-w-2xl">
+                    Prices shown are indicative “from” frame-only pricing. Final pricing depends on prescription lenses, coatings, and fit adjustments—confirmed in-store.
+                </p>
+
+                <!-- Brand carousel (in-store brands) -->
+                <div class="mt-12">
+                    <div class="flex items-end justify-between gap-6 mb-5">
+                        <div>
+                            <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Brands we stock</p>
+                            <h3 class="text-2xl font-serif text-black mt-1">A familiar mix, curated in-store.</h3>
+                        </div>
+                        <p class="hidden md:block text-xs text-neutral-400">Selection may vary by availability.</p>
+                    </div>
+
+                    <div id="brand-carousel" class="brand-carousel glass rounded-[2rem] border border-white/60" role="region" aria-label="Brands carousel">
+                        <div class="brand-viewport" tabindex="0" aria-label="Scrollable list of brands">
+                            <div class="brand-rail">
+                                <div class="brand-card" data-brand="Ray-Ban" role="button" tabindex="0" aria-label="Brand: Ray-Ban"><span class="brand-mark">RB</span><span class="brand-name">Ray-Ban</span></div>
+                                <div class="brand-card" data-brand="Oakley" role="button" tabindex="0" aria-label="Brand: Oakley"><span class="brand-mark">OK</span><span class="brand-name">Oakley</span></div>
+                                <div class="brand-card" data-brand="Vogue" role="button" tabindex="0" aria-label="Brand: Vogue"><span class="brand-mark">VG</span><span class="brand-name">Vogue</span></div>
+                                <div class="brand-card" data-brand="Carrera" role="button" tabindex="0" aria-label="Brand: Carrera"><span class="brand-mark">CR</span><span class="brand-name">Carrera</span></div>
+                                <div class="brand-card" data-brand="Police" role="button" tabindex="0" aria-label="Brand: Police"><span class="brand-mark">PL</span><span class="brand-name">Police</span></div>
+                                <div class="brand-card" data-brand="Calvin Klein" role="button" tabindex="0" aria-label="Brand: Calvin Klein"><span class="brand-mark">CK</span><span class="brand-name">Calvin Klein</span></div>
+                                <div class="brand-card" data-brand="Tommy Hilfiger" role="button" tabindex="0" aria-label="Brand: Tommy Hilfiger"><span class="brand-mark">TH</span><span class="brand-name">Tommy Hilfiger</span></div>
+                                <div class="brand-card" data-brand="Guess" role="button" tabindex="0" aria-label="Brand: Guess"><span class="brand-mark">GS</span><span class="brand-name">Guess</span></div>
+                                <div class="brand-card" data-brand="Polaroid" role="button" tabindex="0" aria-label="Brand: Polaroid"><span class="brand-mark">PD</span><span class="brand-name">Polaroid</span></div>
+                                <div class="brand-card" data-brand="Silhouette" role="button" tabindex="0" aria-label="Brand: Silhouette"><span class="brand-mark">SL</span><span class="brand-name">Silhouette</span></div>
+                                <div class="brand-card" data-brand="MYKITA" role="button" tabindex="0" aria-label="Brand: MYKITA"><span class="brand-mark">MK</span><span class="brand-name">MYKITA</span></div>
+                                <div class="brand-card" data-brand="Nike Vision" role="button" tabindex="0" aria-label="Brand: Nike Vision"><span class="brand-mark">NV</span><span class="brand-name">Nike Vision</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-3 text-[11px] text-neutral-400">Auto-moving on desktop. Hover to pause. Swipe on mobile.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials (Spatial Cards) -->
+        <section class="py-24 px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 testimonial-wrapper">
+                    <div class="glass-card p-12 rounded-[2.5rem] relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <div class="flex gap-1 mb-6 text-yellow-400/90" aria-hidden="true">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <h4 class="text-2xl font-serif text-black mb-6 leading-relaxed">"The technology they use is unlike anything I've seen in Secunda. It felt thorough, precise, and incredibly professional."</h4>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-neutral-200" aria-hidden="true"></div>
+                                <div>
+                                    <p class="text-sm font-bold text-black">Thandiwe M.</p>
+                                    <p class="text-xs text-neutral-500">Verified Patient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-12 rounded-[2.5rem] relative overflow-hidden group hidden md:block">
+                         <div class="relative z-10">
+                             <div class="flex gap-1 mb-6 text-yellow-400/90" aria-hidden="true">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.570-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <h4 class="text-2xl font-serif text-black mb-6 leading-relaxed">"Such a beautiful, calming space. It didn't feel like a medical appointment at all, yet the service was clinically perfect."</h4>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-neutral-200" aria-hidden="true"></div>
+                                <div>
+                                    <p class="text-sm font-bold text-black">Lerato P.</p>
+                                    <p class="text-xs text-neutral-500">Verified Patient</p>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form (Spatial Glass) -->
+        <section id="contact" class="py-32 px-6 relative z-10">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-serif text-black mb-4">Your Visit</h2>
+                    <p class="text-neutral-500 text-lg">Secure your time with our specialists.</p>
+                </div>
+
+                <form id="booking-form" class="space-y-6">
+                    <div class="glass-card rounded-[2.5rem] p-8 space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="ml-4 text-xs font-bold text-neutral-400 uppercase tracking-widest" for="name">Name</label>
+                                <input type="text" id="name" placeholder="Full Name" class="ios-input" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="ml-4 text-xs font-bold text-neutral-400 uppercase tracking-widest" for="phone">Phone</label>
+                                <input type="tel" id="phone" placeholder="Contact Number" class="ios-input" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="ml-4 text-xs font-bold text-neutral-400 uppercase tracking-widest" for="date">Preferred date</label>
+                                <input type="date" id="date" class="ios-input" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="ml-4 text-xs font-bold text-neutral-400 uppercase tracking-widest" for="time">Preferred time</label>
+                                <input type="time" id="time" class="ios-input" required>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="ml-4 text-xs font-bold text-neutral-400 uppercase tracking-widest" for="service">Type</label>
+                            <div class="relative">
+                                <select id="service" class="ios-input appearance-none cursor-pointer">
+                                    <option>Comprehensive Diagnostics</option>
+                                    <option>Pediatric Consultation</option>
+                                    <option>Driver's License Certificate</option>
+                                    <option>Frame Fitting</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-6 flex items-center pointer-events-none text-neutral-400" aria-hidden="true">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                            <p class="ml-4 mt-2 text-[11px] text-neutral-400">We’ll confirm availability on WhatsApp.</p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="ml-4 text-xs font-bold text-neutral-400 uppercase tracking-widest" for="message">Notes</label>
+                             <textarea id="message" rows="3" placeholder="Any specific concerns?" class="ios-input resize-none"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-4">
+                        <button type="submit" class="w-full md:w-auto px-12 py-5 bg-black text-white rounded-full font-medium text-lg hover:scale-105 transition-all btn-ios shadow-2xl shadow-blue-900/20 btn-shimmer">
+                            Request Appointment
+                        </button>
+                        <p class="text-xs text-neutral-400 mt-6">Confirmation sent via WhatsApp within 1 hour.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer (Home) -->
+        <footer class="py-20 px-6 relative z-10 border-t border-black/5 mt-20">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-end gap-12 text-center md:text-left">
+                <div class="space-y-6">
+                    <p class="text-8xl font-serif tracking-tighter text-black/5 leading-none select-none">Zaheer's.</p>
+                    <div class="flex gap-4 text-neutral-500 justify-center md:justify-start">
+                        <a href="#" aria-label="Instagram" class="group inline-flex items-center justify-center w-11 h-11 rounded-full text-neutral-500 hover:text-black hover:bg-black/5 transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z" stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M17.5 6.6h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+
+                        <a href="#" aria-label="Facebook" class="group inline-flex items-center justify-center w-11 h-11 rounded-full text-neutral-500 hover:text-black hover:bg-black/5 transition-colors">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                <path d="M14 9h3V6h-3c-2.21 0-4 1.79-4 4v3H7v3h3v5h3v-5h3l1-3h-4v-3c0-.55.45-1 1-1Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+
+                        <a href="#" aria-label="WhatsApp" class="group inline-flex items-center justify-center w-11 h-11 rounded-full text-neutral-500 hover:text-black hover:bg-black/5 transition-colors">
+                            <span class="sr-only">WhatsApp</span>
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                <path d="M20 11.5a7.5 7.5 0 0 1-11.1 6.6L4 19l.98-4.76A7.5 7.5 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                                <path d="M9.2 9.7c.2-.45.4-.45.6-.45h.5c.14 0 .32.05.49.32.17.27.58 1 .63 1.07.05.07.08.28 0 .46-.08.18-.12.29-.25.45-.13.16-.27.35-.38.47-.13.13-.26.28-.11.55.15.27.67 1.1 1.44 1.78.99.9 1.82 1.18 2.09 1.31.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.54.73 1.81.86.27.13.45.2.52.31.07.11.07.63-.15 1.24-.22.61-1.29 1.17-1.77 1.25-.44.07-1 .1-1.62-.1-.38-.12-.87-.28-1.51-.56-2.65-1.14-4.39-3.93-4.52-4.11-.13-.18-1.07-1.43-1.07-2.73 0-1.29.67-1.92.91-2.18Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-right space-y-2">
+                    <p class="text-black font-serif text-xl">Shop 12 Secunda Central, Secunda</p>
+                    <p class="text-neutral-400 text-sm">© 2026 Zaheer's Optometrist</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- DIAGNOSTICS PAGE -->
+    <main id="diagnostics-page" class="page-hidden" aria-hidden="true">
+        <section class="pt-32 pb-24 px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+                    <div class="lg:sticky lg:top-28 lg:w-[40%]">
+                        <div class="space-y-6 diagnostics-hero">
+                            <a href="#/" class="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-black transition-colors" aria-label="Back to home">
+                                <span aria-hidden="true">←</span> Back
+                            </a>
+
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/50 border border-white/60 backdrop-blur-md">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-600" aria-hidden="true"></span>
+                                <span class="text-[10px] font-bold tracking-widest text-black uppercase">Comprehensive Diagnostics</span>
+                            </div>
+
+                            <h1 class="text-5xl md:text-6xl font-serif text-black leading-[0.9]">
+                                Clarity, <br>
+                                <span class="text-neutral-400 italic font-light">without guesswork.</span>
+                            </h1>
+
+                            <p class="text-neutral-500 text-lg leading-relaxed font-light">
+                                A full clinical assessment designed to remove uncertainty and give you clear, confident next steps—whether you need glasses, treatment, or monitoring.
+                            </p>
+
+                            <div class="glass rounded-[2rem] p-5 flex items-center justify-between gap-6">
+                                <div class="space-y-1">
+                                    <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Typical duration</p>
+                                    <p class="text-lg font-semibold text-black">30–45 minutes</p>
+                                </div>
+                                <div class="h-10 w-px bg-black/10" aria-hidden="true"></div>
+                                <div class="space-y-1">
+                                    <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Includes</p>
+                                    <p class="text-lg font-semibold text-black">Screening + Refraction</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                                <a href="#/contact" data-book-service="Comprehensive Diagnostics" class="px-8 py-4 bg-black text-white text-sm font-semibold rounded-full hover:bg-neutral-800 btn-ios btn-shimmer">
+                                    Book this service
+                                </a>
+                                <a href="#/services" class="px-8 py-4 bg-white/60 text-black text-sm font-semibold rounded-full border border-white/60 backdrop-blur-md hover:bg-white/80 transition-colors">
+                                    See all services
+                                </a>
+                            </div>
+
+                            <p class="text-[11px] text-neutral-400 leading-relaxed">
+                                We don’t store medical details on this site. Appointment requests are confirmed via WhatsApp/phone (POPIA-friendly).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-[60%] space-y-10">
+                        <!-- What we check -->
+                        <div class="glass-card rounded-[2.5rem] p-8 md:p-10">
+                            <div class="flex items-end justify-between gap-8 mb-8">
+                                <div>
+                                    <h2 class="text-3xl font-serif text-black">What we check</h2>
+                                    <p class="text-neutral-500 mt-2">A clinical flow designed for accuracy and calm.</p>
+                                </div>
+                                <p class="hidden md:block text-xs font-semibold text-neutral-400 uppercase tracking-widest">Retina • Pressure • Refraction</p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div class="glass rounded-[2rem] p-6">
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 rounded-2xl bg-blue-50/80 text-blue-600 flex items-center justify-center" aria-hidden="true">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-black">Refraction</p>
+                                            <p class="text-sm text-neutral-500 leading-relaxed">Precision measurement of your prescription for distance, reading, or both.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="glass rounded-[2rem] p-6">
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 rounded-2xl bg-emerald-50/80 text-emerald-600 flex items-center justify-center" aria-hidden="true">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6v6l4 2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-black">Eye health screening</p>
+                                            <p class="text-sm text-neutral-500 leading-relaxed">Checks for signs that may require monitoring or referral.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="glass rounded-[2rem] p-6">
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 rounded-2xl bg-purple-50/80 text-purple-600 flex items-center justify-center" aria-hidden="true">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 7h18M3 12h18M3 17h18"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-black">Visual function</p>
+                                            <p class="text-sm text-neutral-500 leading-relaxed">Focus, binocular vision, and functional assessment based on your needs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="glass rounded-[2rem] p-6">
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-10 h-10 rounded-2xl bg-amber-50/80 text-amber-700 flex items-center justify-center" aria-hidden="true">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v18"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12h18"/></svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-black">Advice & plan</p>
+                                            <p class="text-sm text-neutral-500 leading-relaxed">Clear explanation of results, options, and recommended follow-ups.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Process timeline -->
+                        <div class="glass-card rounded-[2.5rem] p-8 md:p-10">
+                            <h2 class="text-3xl font-serif text-black mb-6">What to expect</h2>
+                            <div class="space-y-5">
+                                <div class="flex gap-4">
+                                    <div class="mt-1 w-8 h-8 rounded-full bg-black text-white text-xs font-bold flex items-center justify-center" aria-hidden="true">1</div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-black">Check-in</p>
+                                        <p class="text-sm text-neutral-500 leading-relaxed">We confirm your needs, symptoms, and any previous prescriptions.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="mt-1 w-8 h-8 rounded-full bg-black text-white text-xs font-bold flex items-center justify-center" aria-hidden="true">2</div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-black">Clinical testing</p>
+                                        <p class="text-sm text-neutral-500 leading-relaxed">We run a calm, step-by-step assessment—no rushing, no guessing.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="mt-1 w-8 h-8 rounded-full bg-black text-white text-xs font-bold flex items-center justify-center" aria-hidden="true">3</div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-black">Results & prescription</p>
+                                        <p class="text-sm text-neutral-500 leading-relaxed">We explain findings clearly and confirm the best lens solution if needed.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ accordion -->
+                        <div class="glass-card rounded-[2.5rem] p-8 md:p-10">
+                            <div class="flex items-end justify-between gap-8 mb-6">
+                                <h2 class="text-3xl font-serif text-black">FAQ</h2>
+                                <p class="text-xs font-semibold text-neutral-400 uppercase tracking-widest">Quick clarity</p>
+                            </div>
+
+                            <div class="space-y-3" id="faq">
+                                <button class="faq-item w-full text-left glass rounded-[1.75rem] p-5 flex items-center justify-between gap-6" aria-expanded="false">
+                                    <div>
+                                        <p class="text-sm font-semibold text-black">Do I need to prepare anything?</p>
+                                        <p class="faq-answer text-sm text-neutral-500 leading-relaxed mt-2 hidden">Bring your current glasses (if you have them) and any previous prescription. If you have headaches or specific symptoms, note when they happen.</p>
+                                    </div>
+                                    <span class="faq-icon text-neutral-500" aria-hidden="true">+</span>
+                                </button>
+
+                                <button class="faq-item w-full text-left glass rounded-[1.75rem] p-5 flex items-center justify-between gap-6" aria-expanded="false">
+                                    <div>
+                                        <p class="text-sm font-semibold text-black">Will I leave with my prescription?</p>
+                                        <p class="faq-answer text-sm text-neutral-500 leading-relaxed mt-2 hidden">Yes. If you need spectacles, we’ll confirm the prescription and recommend lens options. Frames are fitted in-store for best comfort.</p>
+                                    </div>
+                                    <span class="faq-icon text-neutral-500" aria-hidden="true">+</span>
+                                </button>
+
+                                <button class="faq-item w-full text-left glass rounded-[1.75rem] p-5 flex items-center justify-between gap-6" aria-expanded="false">
+                                    <div>
+                                        <p class="text-sm font-semibold text-black">Is this the same as a driver’s certificate test?</p>
+                                        <p class="faq-answer text-sm text-neutral-500 leading-relaxed mt-2 hidden">No. Driver’s screening is quicker and certificate-focused. Comprehensive Diagnostics is a full clinical assessment.</p>
+                                    </div>
+                                    <span class="faq-icon text-neutral-500" aria-hidden="true">+</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="glass rounded-[2.5rem] p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                            <div>
+                                <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Ready to book?</p>
+                                <p class="text-2xl font-serif text-black mt-1">Let’s secure your slot.</p>
+                            </div>
+                            <a href="#/contact" data-book-service="Comprehensive Diagnostics" class="px-10 py-4 bg-black text-white rounded-full font-semibold btn-ios btn-shimmer">
+                                Request appointment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="pt-20 border-t border-black/5 mt-20">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left">
+                        <div>
+                            <p class="text-2xl font-serif text-black">Zaheer's Optometrist</p>
+                            <p class="text-sm text-neutral-500 mt-2">Secunda Central, Shop 12 • 017 634 3885</p>
+                        </div>
+                        <a href="#/" class="text-sm font-semibold text-neutral-600 hover:text-black transition-colors">Back to home</a>
+                    </div>
+                    <p class="text-xs text-neutral-400 mt-8 pb-10 text-center md:text-left">© 2026 Zaheer's Vision Studio</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <!-- COLLECTIONS PAGE -->
+    <main id="collections-page" class="page-hidden" aria-hidden="true">
+        <section class="pt-32 pb-24 px-6 relative z-10">
+            <div class="max-w-7xl mx-auto space-y-10">
+
+                <!-- Showroom Hero (distinct from Diagnostics layout) -->
+                <header class="collections-hero glass-card rounded-[3rem] p-8 md:p-12 relative overflow-hidden">
+                    <div class="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-purple-100/40 blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-24 -left-24 w-[520px] h-[520px] rounded-full bg-blue-100/40 blur-3xl pointer-events-none"></div>
+
+                    <div class="grid lg:grid-cols-12 gap-10 relative z-10">
+                        <div class="lg:col-span-7 space-y-6">
+                            <a href="#/frames" class="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-black transition-colors" aria-label="Back to frames preview">
+                                <span aria-hidden="true">←</span> Back to preview
+                            </a>
+
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/50 border border-white/60 backdrop-blur-md">
+                                <span class="w-1.5 h-1.5 rounded-full bg-black" aria-hidden="true"></span>
+                                <span class="text-[10px] font-bold tracking-widest text-black uppercase">Collections</span>
+                            </div>
+
+                            <h1 class="text-5xl md:text-6xl font-serif text-black leading-[0.9]">
+                                A digital showroom <br>
+                                <span class="text-neutral-400 italic font-light">for choosing your next look.</span>
+                            </h1>
+
+                            <p class="text-neutral-500 text-lg leading-relaxed font-light max-w-xl">
+                                Browse styles, pre‑qualify by “from” pricing, then we finalise fit + lens options properly in-store.
+                            </p>
+
+                            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                                <a href="#/contact" data-book-service="Frame Fitting" class="px-8 py-4 bg-black text-white text-sm font-semibold rounded-full hover:bg-neutral-800 btn-ios btn-shimmer">
+                                    Book a fitting
+                                </a>
+                                <a href="tel:0176851234" class="px-8 py-4 bg-white/60 text-black text-sm font-semibold rounded-full border border-white/60 backdrop-blur-md hover:bg-white/80 transition-colors">
+                                    Call the practice
+                                </a>
+                            </div>
+
+                            <p class="text-[11px] text-neutral-400 leading-relaxed max-w-xl">
+                                No online checkout. Frames require measurements and adjustment. Final pricing depends on lenses/coatings and is confirmed in-store.
+                            </p>
+                        </div>
+
+                        <div class="lg:col-span-5">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="glass rounded-[2rem] p-5">
+                                    <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Brands</p>
+                                    <p class="text-2xl font-serif text-black mt-1">12+</p>
+                                    <p class="text-[11px] text-neutral-500 mt-2">A familiar mix, curated.</p>
+                                </div>
+                                <div class="glass rounded-[2rem] p-5">
+                                    <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Fitting</p>
+                                    <p class="text-2xl font-serif text-black mt-1">On-site</p>
+                                    <p class="text-[11px] text-neutral-500 mt-2">Comfort-first adjustments.</p>
+                                </div>
+                                <div class="glass rounded-[2rem] p-5">
+                                    <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">From pricing</p>
+                                    <p class="text-2xl font-serif text-black mt-1">R1 499</p>
+                                    <p class="text-[11px] text-neutral-500 mt-2">Frame-only indicators.</p>
+                                </div>
+                                <div class="glass rounded-[2rem] p-5">
+                                    <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Turnaround</p>
+                                    <p class="text-2xl font-serif text-black mt-1">Fast</p>
+                                    <p class="text-[11px] text-neutral-500 mt-2">Depends on lenses.</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 glass-card rounded-[2rem] p-2">
+                                <div class="aspect-[16/10] rounded-[1.6rem] overflow-hidden bg-neutral-100 relative">
+                                    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1400&q=80" alt="Eyewear display" class="w-full h-full object-cover" loading="lazy">
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent pointer-events-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Controls: search + filter chips -->
+                <div id="collections-controls" class="glass rounded-[2.5rem] p-5 md:p-6 flex flex-col lg:flex-row gap-5 items-stretch lg:items-center justify-between">
+                    <div class="flex-1">
+                        <label for="collections-search" class="ml-1 text-xs font-bold text-neutral-400 uppercase tracking-widest">Search</label>
+                        <input id="collections-search" type="search" class="ios-input compact mt-2" placeholder="Search frames or brands…" autocomplete="off">
+                    </div>
+                    <div class="flex flex-wrap gap-2 items-center justify-start lg:justify-end">
+                        <button class="filter-chip" type="button" data-collections-filter="all" aria-pressed="true">All</button>
+                        <button class="filter-chip" type="button" data-collections-filter="optical" aria-pressed="false">Optical</button>
+                        <button class="filter-chip" type="button" data-collections-filter="sunglass" aria-pressed="false">Sunglass</button>
+                        <button class="filter-chip" type="button" data-collections-filter="sport" aria-pressed="false">Sport</button>
+                        <button class="filter-chip" type="button" data-collections-filter="light" aria-pressed="false">Lightweight</button>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <section id="collections-gallery" class="glass-card rounded-[3rem] p-8 md:p-10">
+                    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+                        <div>
+                            <h2 class="text-3xl md:text-4xl font-serif text-black">Explore the shelf</h2>
+                            <p class="text-neutral-500 mt-2">Tap/hover a card for brand + price. Use search + filters to narrow down.</p>
+                        </div>
+                        <p id="collections-count" class="text-xs font-semibold text-neutral-400 uppercase tracking-widest">Showing 0</p>
+                    </div>
+
+                    <div id="collections-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Each card has data attributes for filtering -->
+                        <article class="glass-card rounded-[2rem] p-3 group cursor-pointer tap-hover" data-frame-card data-brand="Ray-Ban" data-type="optical" data-tags="minimal round" role="button" tabindex="0" aria-label="Frame: Minimal Round by Ray-Ban">
+                            <div class="aspect-[4/5] overflow-hidden rounded-[1.6rem] relative bg-neutral-100">
+                                <img src="images/glass1.jpg" alt="Frame: Minimal Round" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 tap-reveal tap-bg">
+                                    <div class="space-y-2">
+                                        <p class="text-white font-serif text-2xl leading-none">Minimal Round</p>
+                                        <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Ray-Ban</p>
+                                        <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                            <p class="text-white/70 text-sm">Everyday Optical</p>
+                                            <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R1 699</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card rounded-[2rem] p-3 group cursor-pointer tap-hover" data-frame-card data-brand="Oakley" data-type="sport" data-tags="shield performance" role="button" tabindex="0" aria-label="Frame: Sport Shield by Oakley">
+                            <div class="aspect-[4/5] overflow-hidden rounded-[1.6rem] relative bg-neutral-100">
+                                <img src="images/glass2.jpg" alt="Frame: Sport Shield" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 tap-reveal tap-bg">
+                                    <div class="space-y-2">
+                                        <p class="text-white font-serif text-2xl leading-none">Sport Shield</p>
+                                        <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Oakley</p>
+                                        <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                            <p class="text-white/70 text-sm">Performance Fit</p>
+                                            <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R2 299</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card rounded-[2rem] p-3 group cursor-pointer tap-hover" data-frame-card data-brand="Silhouette" data-type="light" data-tags="titanium ultra" role="button" tabindex="0" aria-label="Frame: Titanium Line by Silhouette">
+                            <div class="aspect-[4/5] overflow-hidden rounded-[1.6rem] relative bg-neutral-100">
+                                <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=900&q=80" alt="Frame: Titanium Line" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 tap-reveal tap-bg">
+                                    <div class="space-y-2">
+                                        <p class="text-white font-serif text-2xl leading-none">Titanium Line</p>
+                                        <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Silhouette</p>
+                                        <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                            <p class="text-white/70 text-sm">Ultra-light</p>
+                                            <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R3 499</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card rounded-[2rem] p-3 group cursor-pointer tap-hover" data-frame-card data-brand="Calvin Klein" data-type="optical" data-tags="acetate classic" role="button" tabindex="0" aria-label="Frame: City Acetate by Calvin Klein">
+                            <div class="aspect-[4/5] overflow-hidden rounded-[1.6rem] relative bg-neutral-100">
+                                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80" alt="Frame: City Acetate" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 tap-reveal tap-bg">
+                                    <div class="space-y-2">
+                                        <p class="text-white font-serif text-2xl leading-none">City Acetate</p>
+                                        <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Calvin Klein</p>
+                                        <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                            <p class="text-white/70 text-sm">Classic Shape</p>
+                                            <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R1 899</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card rounded-[2rem] p-3 group cursor-pointer tap-hover" data-frame-card data-brand="Vogue" data-type="optical" data-tags="cat eye statement" role="button" tabindex="0" aria-label="Frame: Modern Cat-Eye by Vogue">
+                            <div class="aspect-[4/5] overflow-hidden rounded-[1.6rem] relative bg-neutral-100">
+                                <img src="images/glass3.jpg" alt="Frame: Modern Cat-Eye" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 tap-reveal tap-bg">
+                                    <div class="space-y-2">
+                                        <p class="text-white font-serif text-2xl leading-none">Modern Cat-Eye</p>
+                                        <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Vogue</p>
+                                        <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                            <p class="text-white/70 text-sm">Statement Look</p>
+                                            <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R1 599</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card rounded-[2rem] p-3 group cursor-pointer tap-hover" data-frame-card data-brand="Carrera" data-type="sunglass" data-tags="navigator bold" role="button" tabindex="0" aria-label="Frame: Navigator by Carrera">
+                            <div class="aspect-[4/5] overflow-hidden rounded-[1.6rem] relative bg-neutral-100">
+                                <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=900&q=80" alt="Frame: Navigator" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 tap-reveal tap-bg">
+                                    <div class="space-y-2">
+                                        <p class="text-white font-serif text-2xl leading-none">Navigator</p>
+                                        <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Carrera</p>
+                                        <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                            <p class="text-white/70 text-sm">Bold Lines</p>
+                                            <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R1 799</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card rounded-[2rem] p-3 group cursor-pointer tap-hover" data-frame-card data-brand="MYKITA" data-type="light" data-tags="metal minimal" role="button" tabindex="0" aria-label="Frame: Minimal Metal by MYKITA">
+                            <div class="aspect-[4/5] overflow-hidden rounded-[1.6rem] relative bg-neutral-100">
+                                <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b2?auto=format&fit=crop&w=900&q=80" alt="Frame: Minimal Metal" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=900&q=80';">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 tap-reveal tap-bg">
+                                    <div class="space-y-2">
+                                        <p class="text-white font-serif text-2xl leading-none">Minimal Metal</p>
+                                        <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">MYKITA</p>
+                                        <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                            <p class="text-white/70 text-sm">Featherweight</p>
+                                            <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R2 199</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card rounded-[2rem] p-3 group cursor-pointer tap-hover" data-frame-card data-brand="Nike Vision" data-type="sport" data-tags="active edge" role="button" tabindex="0" aria-label="Frame: Sport Edge by Nike Vision">
+                            <div class="aspect-[4/5] overflow-hidden rounded-[1.6rem] relative bg-neutral-100">
+                                <img src="images/glass4.jpg" alt="Frame: Sport Edge" loading="lazy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 tap-img">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-7 tap-reveal tap-bg">
+                                    <div class="space-y-2">
+                                        <p class="text-white font-serif text-2xl leading-none">Sport Edge</p>
+                                        <p class="text-white/80 text-xs font-semibold tracking-[0.22em] uppercase">Nike Vision</p>
+                                        <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                                            <p class="text-white/70 text-sm">Active Wear</p>
+                                            <span class="text-white text-xs font-semibold px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">From R1 899</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div id="collections-empty" class="hidden mt-10 text-center">
+                        <p class="text-xl font-serif text-black">No matches found.</p>
+                        <p class="text-sm text-neutral-500 mt-2">Try a different search term or reset filters.</p>
+                    </div>
+
+                    <p class="mt-8 text-[11px] text-neutral-400 leading-relaxed max-w-3xl">
+                        Prices shown are indicative “from” frame-only pricing. Final pricing depends on prescription lenses, coatings, and fit adjustments—confirmed in-store.
+                    </p>
+                </section>
+
+                <div id="collections-final-cta" class="glass rounded-[2.5rem] p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div>
+                        <p class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Want a guided pick?</p>
+                        <p class="text-2xl font-serif text-black mt-1">We’ll help you find the right fit.</p>
+                    </div>
+                    <a href="#/contact" data-book-service="Frame Fitting" class="px-10 py-4 bg-black text-white rounded-full font-semibold btn-ios btn-shimmer">
+                        Request fitting
+                    </a>
+                </div>
+
+                <footer class="pt-16 border-t border-black/5 mt-10">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left">
+                        <div>
+                            <p class="text-2xl font-serif text-black">Zaheer's Optometrist</p>
+                            <p class="text-sm text-neutral-500 mt-2">Secunda Central, Shop 12 • 017 634 3885</p>
+                        </div>
+                        <a href="#/frames" class="text-sm font-semibold text-neutral-600 hover:text-black transition-colors">Back to frames</a>
+                    </div>
+                    <p class="text-xs text-neutral-400 mt-8 pb-10 text-center md:text-left">© 2026 Zaheer's Vision Studio</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Boot flag (prevents double-animating hero during loader intro)
+        let ZaheersBooted = false;
+
+        // Routing (hash-based, single-file “multi-page”)
+        const HOME_META = {
+            title: 'Zaheers Optometrist | Premium Eye Care • Central Square',
+          description: 'Zaheers Optometrist in Central Square: Coprehensive Diagnostics, pediatric care, driver’s certificates, and curated frames. Book an appointment.'
+        };
+        const DIAG_META = {
+            title: 'Comprehensive Diagnostics | Zaheers Optometrist • Central Square',
+          description: 'Comprehensive Diagnostics at Zaheers Optometrist: full eye health screening, refraction, and a clear plan. Book in Central Square.'
+      };
+        const COLLECTIONS_META = {
+            title: 'Collections | Zaheers Optometrist • Central Square',
+          description: 'Browse Zaheers’s curated eyewear collections in Central Square. Inicative from-pricing, brand highlights, and book a fitting in-store.'
+        };
+
+        const homePage = document.getElementById('home-page');
+        const diagPage = document.getElementById('diagnostics-page');
+        const collectionsPage = document.getElementById('collections-page');
+        const metaDesc = document.getElementById('meta-description');
+
+        function setMeta(meta) {
+            if (meta?.title) document.title = meta.title;
+            if (metaDesc && meta?.description) metaDesc.setAttribute('content', meta.description);
+        }
+
+        function getRoute() {
+            const h = (location.hash || '#/').trim();
+            if (h.startsWith('#/')) return (h.slice(2).split('?')[0] || '').trim();
+            if (h.startsWith('#')) return (h.slice(1).split('?')[0] || '').trim();
+            return '';
+        }
+
+        function showPage(which) {
+            if (!homePage || !diagPage || !collectionsPage) return;
+            const isHome = which === 'home';
+            const isDiag = which === 'diagnostics';
+            const isCollections = which === 'collections';
+
+            homePage.classList.toggle('page-hidden', !isHome);
+            diagPage.classList.toggle('page-hidden', !isDiag);
+            collectionsPage.classList.toggle('page-hidden', !isCollections);
+
+            homePage.setAttribute('aria-hidden', String(!isHome));
+            diagPage.setAttribute('aria-hidden', String(!isDiag));
+            collectionsPage.setAttribute('aria-hidden', String(!isCollections));
+
+            document.body.dataset.page = isHome ? 'home' : (isDiag ? 'diagnostics' : 'collections');
+
+            // Stop any home-only timers/loops when leaving home
+            if (!isHome) {
+                if (typeof brandAutoTimer !== 'undefined' && brandAutoTimer) {
+                    clearInterval(brandAutoTimer);
+                    brandAutoTimer = null;
+                }
+                if (typeof stopBrandMarquee === 'function') stopBrandMarquee();
+            }
+        }
+
+        function scrollToId(id, behavior = 'smooth') {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.scrollIntoView({ behavior, block: 'start' });
+        }
+
+        function killScrollTriggers() {
+            // Revert pinned/animated inline styles when tearing down page triggers
+            ScrollTrigger.getAll().forEach(t => t.kill(true));
+        }
+
+        function initHomeScrollAnimations() {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+            // Safety: if we ever previously animated text nodes, clear any inline hiding
+            gsap.set("#home-page h2, #home-page p, #home-page h3", { clearProps: "opacity,transform" });
+
+            // Parallax (home only)
+            gsap.utils.toArray("#home-page .parallax-img").forEach((img) => {
+                gsap.to(img, {
+                    yPercent: 10,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: img.parentElement,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+            });
+
+            // Section reveal (home sections)
+            // IMPORTANT: animate containers (cards) rather than every <p> tag,
+            // otherwise hover overlays and card copy can stay invisible.
+            gsap.utils.toArray("#home-page section").forEach(section => {
+                const blocks = section.querySelectorAll(".glass-card, .glass");
+                if (!blocks.length) return;
+                gsap.from(blocks, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 85%"
+                    },
+                    y: 18,
+                    opacity: 0,
+                    duration: 0.95,
+                    stagger: 0.07,
+                    ease: "power3.out"
+                });
+            });
+
+            // Counters (home only)
+            gsap.utils.toArray("#home-page .counter").forEach(counter => {
+                const target = parseInt(counter.getAttribute("data-target"));
+                gsap.to(counter, {
+                    scrollTrigger: {
+                        trigger: counter,
+                        start: "top 85%",
+                        once: true
+                    },
+                    innerText: target,
+                    duration: 2,
+                    snap: { innerText: 1 },
+                    ease: "power2.out",
+                    onUpdate: function() {
+                        if (target > 100) counter.innerText = Math.ceil(this.targets()[0].innerText) + "+";
+                    }
+                });
+            });
+        }
+
+        function initDiagnosticsScrollAnimations() {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            const blocks = diagPage?.querySelectorAll('.glass-card, .glass');
+            if (!blocks?.length) return;
+            gsap.from(blocks, {
+                y: 18,
+                opacity: 0,
+                duration: 0.85,
+                stagger: 0.06,
+                ease: "power2.out"
+            });
+        }
+
+        function initCollectionsScrollAnimations() {
+            const prefersReduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            if (prefersReduce) return;
+            if (!collectionsPage) return;
+
+            const hero = collectionsPage.querySelector('.collections-hero');
+            const heroImg = hero?.querySelector('img');
+
+            const controlsWrap = document.getElementById('collections-controls')
+                || collectionsPage.querySelector('#collections-search')?.closest('.glass');
+
+            const gallerySection = document.getElementById('collections-gallery')
+                || collectionsPage.querySelector('#collections-grid')?.closest('section');
+
+            const galleryHeader = collectionsPage.querySelector('#collections-count')?.closest('div');
+            const cards = gsap.utils.toArray(collectionsPage.querySelectorAll('[data-frame-card]'));
+            const finalCta = document.getElementById('collections-final-cta');
+            const footer = collectionsPage.querySelector('footer');
+
+            // Clear any leftovers from previous route visits
+            gsap.set([controlsWrap, galleryHeader, finalCta, footer].filter(Boolean), { clearProps: 'opacity,transform' });
+            gsap.set(cards, { clearProps: 'opacity,transform' });
+
+            // Entry (only when navigating after initial boot)
+            if (hero && ZaheersBooted) {
+                gsap.from(hero, { y: 16, opacity: 0, duration: 0.75, ease: 'power2.out' });
+            }
+
+            // Subtle parallax (depth illusion, no hijacking)
+            if (hero && heroImg) {
+                gsap.to(heroImg, {
+                    yPercent: -8,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: hero,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            }
+
+            // Controls reveal
+            if (controlsWrap) {
+                gsap.from(controlsWrap, {
+                    y: 14,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: controlsWrap,
+                        start: 'top 92%',
+                        once: true
+                    }
+                });
+            }
+
+            // Gallery header reveal
+            if (galleryHeader && gallerySection) {
+                gsap.from(galleryHeader, {
+                    y: 12,
+                    opacity: 0,
+                    duration: 0.75,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: gallerySection,
+                        start: 'top 90%',
+                        once: true
+                    }
+                });
+            }
+
+            // Cards: batch reveal on scroll (calm stagger)
+            if (cards?.length) {
+                ScrollTrigger.batch(cards, {
+                    start: 'top 92%',
+                    once: true,
+                    onEnter: (batch) => {
+                        gsap.from(batch, {
+                            y: 16,
+                            opacity: 0,
+                            duration: 0.75,
+                            ease: 'power2.out',
+                            stagger: 0.06
+                        });
+                    }
+                });
+            }
+
+            // Final CTA + footer
+            if (finalCta) {
+                gsap.from(finalCta, {
+                    y: 14,
+                    opacity: 0,
+                    duration: 0.85,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: finalCta,
+                        start: 'top 92%',
+                        once: true
+                    }
+                });
+            }
+
+            if (footer) {
+                gsap.from(footer, {
+                    y: 10,
+                    opacity: 0,
+                    duration: 0.75,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: footer,
+                        start: 'top 96%',
+                        once: true
+                    }
+                });
+            }
+
+            ScrollTrigger.refresh();
+        }
+
+        function applyRoute(opts = {}) {
+            const { behavior = 'smooth', skipScroll = false } = opts;
+            const route = getRoute();
+
+            // Broadcast route changes
+            try {
+                window.dispatchEvent(new CustomEvent('Zaheers:route', { detail: { route } }));
+            } catch (_) {}
+
+            const normalized = route === '' ? 'home' : route;
+            const isHomeSubSection = ['about', 'services', 'frames', 'contact'].includes(normalized);
+            
+            // 1. Force instant scroll ("cut") for page swaps, smooth only for home anchors
+            const isPageSwap = (normalized === 'diagnostics' || normalized === 'collections' || (normalized === 'home' && !skipScroll));
+            
+            if (isPageSwap) {
+                document.documentElement.style.scrollBehavior = 'auto';
+            }
+
+            // 2. Swap Pages
+            if (normalized === 'diagnostics') {
+                setMeta(DIAG_META);
+                showPage('diagnostics');
+                killScrollTriggers();
+                if (!skipScroll) window.scrollTo(0, 0);
+                initDiagnosticsScrollAnimations();
+            } 
+            else if (normalized === 'collections') {
+                setMeta(COLLECTIONS_META);
+                showPage('collections');
+                killScrollTriggers();
+                if (!skipScroll) window.scrollTo(0, 0);
+                initCollectionsScrollAnimations();
+                ScrollTrigger.refresh();
+            } 
+            else {
+                // Home (or home subsection)
+                setMeta(HOME_META);
+                showPage('home');
+                killScrollTriggers();
+                initHomeScrollAnimations();
+                ScrollTrigger.refresh();
+
+                if (!skipScroll) {
+                    if (normalized === 'home' || normalized === '/') {
+                        window.scrollTo(0, 0);
+                    } else if (isHomeSubSection) {
+                        // Restore smooth for in-page anchors
+                        document.documentElement.style.scrollBehavior = 'smooth';
+                        requestAnimationFrame(() => scrollToId(normalized, 'smooth'));
+                    } else {
+                        window.scrollTo(0, 0);
+                    }
+                }
+            }
+
+            // 3. Restore global smooth scroll after the "cut" is complete
+            if (isPageSwap) {
+                setTimeout(() => {
+                    document.documentElement.style.scrollBehavior = '';
+                }, 100);
+            }
+        }
+
+        // Make sure initial page is correct before load animations
+        applyRoute({ behavior: 'auto', skipScroll: true });
+
+        window.addEventListener('hashchange', () => {
+            applyRoute({ behavior: 'smooth' });
+            // brand carousel depends on page visibility
+            requestAnimationFrame(() => initBrandCarousel());
+        });
+
+        // Preloader + page enter animation
+        window.addEventListener("load", () => {
+            const route = getRoute();
+            const tl = gsap.timeline();
+
+            tl.to(".loader", {
+                opacity: 0,
+                duration: 0.6,
+                delay: 0.35,
+                onComplete: () => document.querySelector(".loader").style.display = "none"
+            });
+
+            if (route === 'diagnostics') {
+                tl.from(".diagnostics-hero > *", {
+                    y: 24,
+                    opacity: 0,
+                    duration: 0.9,
+                    stagger: 0.08,
+                    ease: "power3.out"
+                }, "-=0.1");
+            } else if (route === 'collections') {
+                tl.from(".collections-hero > *", {
+                    y: 24,
+                    opacity: 0,
+                    duration: 0.9,
+                    stagger: 0.08,
+                    ease: "power3.out"
+                }, "-=0.1");
+            } else {
+                tl.from(".hero-text > *", {
+                    y: 30,
+                    opacity: 0,
+                    duration: 1.1,
+                    stagger: 0.1,
+                    ease: "power4.out"
+                }, "-=0.1")
+                .to(".hero-image", {
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power2.out"
+                }, "-=0.9");
+            }
+
+            // Init scroll animations for the current page
+            applyRoute({ behavior: 'auto' });
+
+            // Mark boot complete (enables page-entry animations on subsequent route navigations)
+            ZaheersBooted = true;
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                const bars = mobileMenuBtn.querySelectorAll('div');
+                mobileMenuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+
+                if (isMenuOpen) {
+                    mobileMenu.style.pointerEvents = "auto";
+                    mobileMenu.setAttribute('aria-hidden', 'false');
+                    gsap.to(mobileMenu, { opacity: 1, duration: 0.25 });
+                    gsap.fromTo(mobileLinks,
+                        { y: 16, opacity: 0 },
+                        { y: 0, opacity: 1, stagger: 0.05, duration: 0.45, ease: "power2.out" }
+                    );
+                    gsap.to(bars[0], { rotate: 45, y: 3, duration: 0.25 });
+                    gsap.to(bars[1], { rotate: -45, y: -3, duration: 0.25 });
+                } else {
+                    mobileMenu.style.pointerEvents = "none";
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                    gsap.to(mobileMenu, { opacity: 0, duration: 0.25 });
+                    gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.25 });
+                    gsap.to(bars[1], { rotate: 0, y: 0, duration: 0.25 });
+                }
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    isMenuOpen = false;
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenu.style.pointerEvents = "none";
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                    gsap.to(mobileMenu, { opacity: 0, duration: 0.25 });
+                    const bars = mobileMenuBtn.querySelectorAll('div');
+                    gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.25 });
+                    gsap.to(bars[1], { rotate: 0, y: 0, duration: 0.25 });
+                });
+            });
+        }
+
+        // Desktop: clicking the big diagnostics service card opens the diagnostics page
+        (function initDiagnosticsCardRoute() {
+            const ok = window.matchMedia && window.matchMedia('(hover: hover)').matches && window.matchMedia('(pointer: fine)').matches;
+            if (!ok) return;
+            const card = document.getElementById('svc-diagnostics');
+            if (!card) return;
+            card.addEventListener('click', (e) => {
+                const interactive = e.target.closest('a, button, input, select, textarea, label');
+                if (interactive) return;
+                location.hash = '#/diagnostics';
+            });
+        })();
+
+        // Tap-to-hover controller (touch devices)
+        (function initTapHover() {
+            const isCoarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+            const noHover = window.matchMedia && window.matchMedia('(hover: none)').matches;
+            const isTouchLike = isCoarse || noHover || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            if (!isTouchLike) return;
+
+            document.documentElement.classList.add('is-touch');
+
+            const cards = Array.from(document.querySelectorAll('.tap-hover'));
+            if (!cards.length) return;
+
+            const clearAll = (except = null) => {
+                cards.forEach(c => {
+                    if (except && c === except) return;
+                    c.classList.remove('is-active');
+                    c.setAttribute('aria-pressed', 'false');
+                });
+            };
+
+            const toggleCard = (card) => {
+                const isActive = card.classList.contains('is-active');
+                clearAll(card);
+                card.classList.toggle('is-active', !isActive);
+                card.setAttribute('aria-pressed', String(!isActive));
+            };
+
+            cards.forEach(card => {
+                card.setAttribute('aria-pressed', 'false');
+
+                const nav = card.getAttribute('data-tap-nav');
+
+                card.addEventListener('click', (e) => {
+                    const interactive = e.target.closest('a, button, input, select, textarea, label');
+                    if (interactive) return;
+
+                    // Some cards are meant to behave like navigation on touch (e.g., Comprehensive Diagnostics)
+                    if (nav) {
+                        e.preventDefault();
+                        location.hash = nav;
+                        return;
+                    }
+
+                    e.preventDefault();
+                    toggleCard(card);
+                }, { passive: false });
+
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        if (nav) {
+                            location.hash = nav;
+                            return;
+                        }
+                        toggleCard(card);
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                const inside = e.target.closest('.tap-hover');
+                if (!inside) clearAll();
+            }, true);
+
+            // Clear any active cards when routing (prevents stuck overlays)
+            window.addEventListener('Zaheers:route', () => clearAll());
+
+            let scrollTimer;
+            window.addEventListener('scroll', () => {
+                window.clearTimeout(scrollTimer);
+                scrollTimer = window.setTimeout(() => clearAll(), 120);
+            }, { passive: true });
+        })();
+
+        // FAQ accordion
+        (function initFAQ() {
+            const wrap = document.getElementById('faq');
+            if (!wrap) return;
+            const items = Array.from(wrap.querySelectorAll('.faq-item'));
+            items.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                    items.forEach(b => b.setAttribute('aria-expanded', 'false'));
+                    btn.setAttribute('aria-expanded', String(!isOpen));
+                });
+            });
+        })();
+
+        // Deep-link booking: preselect service (works across routes because form exists in DOM)
+        (function initBookServiceLinks() {
+            const select = document.getElementById('service');
+            if (!select) return;
+            document.querySelectorAll('[data-book-service]').forEach(a => {
+                a.addEventListener('click', () => {
+                    const svc = a.getAttribute('data-book-service');
+                    if (!svc) return;
+                    const opt = Array.from(select.options).find(o => o.value === svc || o.textContent.trim() === svc);
+                    if (opt) select.value = opt.value;
+                });
+            });
+        })();
+
+        // Date/time helpers (light-touch)
+        (function initDateTimeFields() {
+            const dateEl = document.getElementById('date');
+            const timeEl = document.getElementById('time');
+            if (!dateEl || !timeEl) return;
+
+            const now = new Date();
+            const yyyy = now.getFullYear();
+            const mm = String(now.getMonth() + 1).padStart(2, '0');
+            const dd = String(now.getDate()).padStart(2, '0');
+            dateEl.min = `${yyyy}-${mm}-${dd}`;
+
+            if (!timeEl.value) {
+                const rounded = new Date(now);
+                rounded.setSeconds(0);
+                rounded.setMilliseconds(0);
+                const minutes = rounded.getMinutes();
+                const next = Math.ceil(minutes / 15) * 15;
+                rounded.setMinutes(next);
+                const hh = String(rounded.getHours()).padStart(2, '0');
+                const min = String(rounded.getMinutes()).padStart(2, '0');
+                timeEl.value = `${hh}:${min}`;
+            }
+        })();
+
+        // Brands carousel (auto-loop ribbon)
+        // Desktop: GSAP drives a seamless translateX loop (no arrows)
+        // Mobile/touch: remains swipeable (no forced animation)
+        let brandAutoTimer = null; // kept for compatibility with showPage teardown
+        let brandMarqueeTween = null;
+
+        function stopBrandMarquee() {
+            if (brandMarqueeTween) {
+                brandMarqueeTween.kill();
+                brandMarqueeTween = null;
+            }
+        }
+
+        function initBrandCarousel() {
+            // Only on home page
+            if (document.body.dataset.page !== 'home') return;
+
+            const wrap = document.getElementById('brand-carousel');
+            if (!wrap) return;
+
+            const viewport = wrap.querySelector('.brand-viewport');
+            const rail = wrap.querySelector('.brand-rail');
+            if (!viewport || !rail) return;
+
+            const prefersReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const okDesktop = window.matchMedia && window.matchMedia('(hover: hover)').matches && window.matchMedia('(pointer: fine)').matches;
+
+            // Always stop any previous tween before creating a new one
+            stopBrandMarquee();
+
+            // Ensure we don't duplicate content repeatedly
+            if (!wrap.dataset.originalHtml) {
+                wrap.dataset.originalHtml = rail.innerHTML;
+            } else {
+                rail.innerHTML = wrap.dataset.originalHtml;
+            }
+
+            // Default: allow swipe/scroll
+            viewport.style.overflowX = 'auto';
+
+            // Mobile / reduced motion: keep swipeable only
+            if (!okDesktop || prefersReduce) {
+                rail.style.transform = '';
+                return;
+            }
+
+            // Desktop marquee mode: hide overflow so it looks like a ribbon
+            viewport.style.overflowX = 'hidden';
+
+            // Build a seamless loop by duplicating the set once
+            rail.insertAdjacentHTML('beforeend', wrap.dataset.originalHtml);
+
+            // Measure the width of the original set
+            const children = Array.from(rail.children);
+            const half = Math.floor(children.length / 2);
+            let loopWidth = 0;
+            for (let i = 0; i < half; i++) {
+                loopWidth += children[i].getBoundingClientRect().width;
+                if (i < half - 1) loopWidth += 12; // gap: 12px
+            }
+
+            // Guard
+            if (!loopWidth || !isFinite(loopWidth)) return;
+
+            // Start from 0 each time
+            gsap.set(rail, { x: 0 });
+
+            // Speed tuned for “premium calm”
+            const pxPerSecond = 52;
+            const duration = Math.max(12, loopWidth / pxPerSecond);
+
+            brandMarqueeTween = gsap.to(rail, {
+                x: -loopWidth,
+                duration,
+                ease: 'none',
+                repeat: -1,
+                modifiers: {
+                    x: gsap.utils.unitize(x => {
+                        const v = parseFloat(x);
+                        const wrapped = ((v % -loopWidth) + -loopWidth) % -loopWidth;
+                        return wrapped;
+                    })
+                }
+            });
+
+            const pause = () => brandMarqueeTween && brandMarqueeTween.pause();
+            const resume = () => brandMarqueeTween && brandMarqueeTween.resume();
+
+            // prevent double-binding
+            if (wrap.dataset.bound !== 'true') {
+                wrap.dataset.bound = 'true';
+
+                // Pause when hovering anywhere in the carousel
+                wrap.addEventListener('mouseenter', pause);
+                wrap.addEventListener('mouseleave', resume);
+
+                // Pause when hovering a specific card (more "direct" feel)
+                wrap.addEventListener('mouseover', (e) => {
+                    if (e.target.closest('.brand-card')) pause();
+                });
+                wrap.addEventListener('mouseout', (e) => {
+                    if (e.target.closest('.brand-card')) resume();
+                });
+
+                // Keyboard focus
+                viewport.addEventListener('focusin', pause);
+                viewport.addEventListener('focusout', resume);
+
+                // Also pause while user interacts (mouse down)
+                viewport.addEventListener('pointerdown', pause);
+                viewport.addEventListener('pointerup', resume);
+
+                // Rebuild on resize (debounced)
+                let resizeTimer;
+                window.addEventListener('resize', () => {
+                    window.clearTimeout(resizeTimer);
+                    resizeTimer = window.setTimeout(() => {
+                        // only rebuild if still on home
+                        if (document.body.dataset.page === 'home') initBrandCarousel();
+                    }, 140);
+                }, { passive: true });
+            }
+        }
+
+        // Start once after load (home)
+        window.addEventListener('load', () => {
+            requestAnimationFrame(() => initBrandCarousel());
+        });
+
+        // Collections showroom: search + filters (distinct interaction layer)
+        (function initCollectionsShowroom() {
+            const page = document.getElementById('collections-page');
+            if (!page) return;
+
+            const search = page.querySelector('#collections-search');
+            const chips = Array.from(page.querySelectorAll('[data-collections-filter]'));
+            const grid = page.querySelector('#collections-grid');
+            const countEl = page.querySelector('#collections-count');
+            const emptyEl = page.querySelector('#collections-empty');
+
+            if (!search || !chips.length || !grid) return;
+
+            const cards = () => Array.from(page.querySelectorAll('[data-frame-card]'));
+
+            const state = {
+                filter: 'all',
+                q: ''
+            };
+
+            const norm = (s) => (s || '').toLowerCase().trim();
+
+            function matches(card) {
+                const type = norm(card.getAttribute('data-type'));
+                const brand = norm(card.getAttribute('data-brand'));
+                const tags = norm(card.getAttribute('data-tags'));
+
+                const inType = state.filter === 'all' ? true : (type === state.filter);
+                if (!inType) return false;
+
+                if (!state.q) return true;
+                const hay = `${brand} ${tags}`;
+                return hay.includes(state.q);
+            }
+
+            function apply() {
+                const list = cards();
+                let shown = 0;
+                list.forEach(card => {
+                    const ok = matches(card);
+                    card.classList.toggle('hidden', !ok);
+                    if (ok) shown++;
+                });
+
+                if (countEl) {
+                    countEl.textContent = `Showing ${shown}`;
+                }
+                if (emptyEl) {
+                    emptyEl.classList.toggle('hidden', shown !== 0);
+                }
+            }
+
+            function setFilter(next) {
+                state.filter = next;
+                chips.forEach(btn => btn.setAttribute('aria-pressed', String(btn.getAttribute('data-collections-filter') === next)));
+                apply();
+            }
+
+            chips.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    setFilter(btn.getAttribute('data-collections-filter') || 'all');
+                });
+            });
+
+            search.addEventListener('input', () => {
+                state.q = norm(search.value);
+                apply();
+            });
+
+            // Refresh counts/visibility whenever the router switches to collections
+            window.addEventListener('Zaheers:route', (e) => {
+                const r = (e?.detail?.route || '').trim();
+                if (r !== 'collections') return;
+                requestAnimationFrame(() => apply());
+            });
+
+            // Initial apply
+            apply();
+        })();
+
+        // Form Submit
+        const bookingForm = document.getElementById('booking-form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const payload = {
+                    name: document.getElementById('name')?.value?.trim(),
+                    phone: document.getElementById('phone')?.value?.trim(),
+                    service: document.getElementById('service')?.value,
+                    date: document.getElementById('date')?.value,
+                    time: document.getElementById('time')?.value,
+                    notes: document.getElementById('message')?.value?.trim()
+                };
+                console.log('Appointment request (local demo):', payload);
+
+                const btn = e.target.querySelector('button');
+                const originalText = btn.innerHTML;
+
+                btn.innerHTML = 'Request Sent ✓';
+                btn.style.backgroundColor = '#34c759';
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.backgroundColor = '';
+                    e.target.reset();
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
